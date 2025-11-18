@@ -10,7 +10,7 @@
         }
 
         .container {
-            width: 300px;
+            width: 600px;
             margin: 100px auto;
             padding: 20px;
             background: white;
@@ -22,15 +22,54 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #ccc;
         }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: Arial;
+        }
+
 
         button {
             width: 100%;
             padding: 10px;
-            background: #2196F3;
+            box-sizing: border-box;
+            background: #4CAF50;
             color: white;
             border: none;
+            border-radius: 6px;
         }
+
+        .buttons a {
+            color: white;
+            text-decoration: none;
+            background: #4CAF50;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        .buttons a.interview {
+            display: block;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+            background: #4caf93;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+
     </style>
 </head>
 
@@ -38,12 +77,36 @@
     <div class="container">
         <h2>Create Account</h2>
         <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+            <table>
+                <td>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="text" placeholder="Reference code" required>
+                </td>
+                <td>
+                    <input type="text" placeholder="Student ID" required>
+                    <input type="text" placeholder="Contact number" required>
+                    <select required>
+                        <option value="" disabled selected>Select Spa Course</option>
+                        <option value="massage">Massage Course</option>
+                        <option value="aromatherapy">Aromatherapy Course</option>
+                        <option value="manicure">Manicure & Pedicure Course</option>
+                        <option value="facial">Facial Treatment Course</option>
+                    </select>
+                    <input type="text" value="Intake Batch 4" enable>
+                </td>
+            </table>
+            
             <button type="submit">Sign Up</button>
         </form>
-        <p><a href="login.html">Back to login</a></p>
+        
+        <p><i>You have to get the reference code through an interview to join MASMED Beauty Prenuer.</i></p>
+        <div class="buttons">
+        
+            <a href="https://wa.me/60189872327/I'M INTERESTED TO JOIN MASMED BEAUTY PRENUER!" class="interview">Start your
+                interview to join MBP</a><br>
+        </div>
     </div>
 </body>
 
