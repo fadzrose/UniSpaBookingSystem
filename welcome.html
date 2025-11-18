@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to UNI-SPA</title>
+
+    <style>
+        /* Fix any unexpected horizontal overflow */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            box-sizing: border-box;
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* allows wrapping on small screens */
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            /* prevents text from stretching */
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            color: white;
+            text-decoration: none;
+            background: #4CAF50;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-left: 10px;
+            margin-top: 5px;
+            
+        }
+        .buttons a.login {
+            color: white;
+            text-decoration: none;
+            background: #4CAF50;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        .buttons a.signup {
+            background: #2196F3;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .content .buttons{
+            justify-content: center;
+        }
+
+        .content h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .promo-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        /* SERVICE CARD GRID (MAX 4 per row) */
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Each card */
+        .service-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            
+            /* Max 4 cards per row */
+            flex: 1 1 calc(25% - 20px); /* 4 columns */
+            max-width: calc(25% - 20px);
+        }
+
+        /* Tablet – 2 cards per row */
+        @media (max-width: 900px) {
+            .service-card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        /* Mobile – 1 card per row */
+        @media (max-width: 500px) {
+            .service-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+
+
+        /* RESPONSIVE FIXES */
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .buttons {
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .buttons a {
+                margin: 5px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h2 {
+                font-size: 1.2rem;
+            }
+
+            .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .promo-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>UNI-SPA</h2>
+
+        <div class="buttons">
+            <a href="login.html" class="login">Login</a>
+            <a href="signup.html" class="signup">Join MBP</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <h1>Welcome to UNI-SPA System</h1>
+        <p style="text-align:center;">Explore our promotions before booking your slot!</p>
+
+        <div class="promo-card">
+            <h3>Beauty Reward Voucher</h3>
+            <p>Pamper yourself with a luxurious spa experience at speacial price! Valid for mentioned treatment.</p>
+        </div>
+
+        <div class="promo-card">
+            <h3>New Year Promotion</h3>
+            <p>Premium pillows now with limited-time offers!</p>
+        </div>
+
+        <div class="promo-card">
+            <h3>Merdeka Promotion</h3>
+            <p>Get custom pillow sewing at a promotional price.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Normal Price</h1>
+        <p style="text-align:center;">Explore our services before booking your slot!</p>
+    
+        <div class="service-container">
+            <div class="service-card">
+                <h3>Stress Massage</h3>
+                <p>30 minutes <br> RM 50.00</p>
+            </div>
+    
+            <div class="service-card">
+                <h3>Aromatherapy Massage</h3>
+                <p>45 minutes <br> RM 70.00</p>
+            </div>
+    
+            <div class="service-card">
+                <h3>Hot Stone Massage</h3>
+                <p>60 minutes <br> RM 90.00</p>
+            </div>
+    
+            <div class="service-card">
+                <h3>Foot Reflexology</h3>
+                <p>30 minutes <br> RM 40.00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Join MASMED Beauty Prenuer</h1>
+        <p style="text-align:center;">We guide your enterprenuer spirit to high level!</p>
+        <div class="buttons">
+        
+            <a href="https://wa.me/60189872327/I'M INTERESTED TO JOIN MASMED BEAUTY PRENUER!">Start your interview to join
+                MBP</a><br>
+        </div>
+        <div class="promo-card">
+            <h3>Massage and Aromatherapy</h3>
+            <p>Massage and heals with aromatherapy.</p>
+        </div>
+        <div class="promo-card">
+            <h3>Manicure and Padicure</h3>
+            <p>Shine your finger with cute polish.</p>
+        </div>
+        <div class="buttons">
+        
+            <a href="https://wa.me/60189872327/I have question about MASMED BEAUTY PRENUER!">Contact us for more information</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
