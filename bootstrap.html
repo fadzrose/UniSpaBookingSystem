@@ -6,7 +6,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>CEO page</title>
+    <title>Password Form with Visible Icon Button</title>
     <style>
         .password-container {
             position: relative;
@@ -38,25 +38,23 @@
         }
 
         .header {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* centers title */
-            position: relative;
             padding: 10px;
+            text-align: center;
             background: #ff8fab;
             color: black;
             font-size: 30px;
+
         }
 
-        /* Position the button to the left */
-        .header .openbtn {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #ff8fab;
+            color: white;
+            text-align: center;
         }
-
-        
 
         .card {
 
@@ -152,17 +150,14 @@
         .openbtn {
             font-size: 20px;
             cursor: pointer;
-            background-color:#ff8fab;
+            background-color: pink;
             color: whitesmoke;
             padding: 10px 15px;
             border: none;
-            border-radius: 6px;
-            box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
         }
 
         .openbtn:hover {
             background-color: #ff8fab;
-            box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
         }
 
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation*/
@@ -189,8 +184,9 @@
 <body style="background: #ffe5ec;">
     <div class="header" id="header">
         <div>
-            <button class="openbtn" onclick="openNav()">&#9776;</button>
-            <h2>Creative Unit Production System</h2>
+
+            <p align="left"><button class="openbtn" onclick="openNav()">&#9776; </button> Creative Unit Production
+                System</p>
         </div>
 
     </div>
@@ -433,7 +429,74 @@
                         </div>
                     </div>
 
-                    
+                    <!-- Color System -->
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    Primary
+                                    <div class="text-white-50 small">#4e73df</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    Success
+                                    <div class="text-white-50 small">#1cc88a</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-info text-white shadow">
+                                <div class="card-body">
+                                    Info
+                                    <div class="text-white-50 small">#36b9cc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-warning text-white shadow">
+                                <div class="card-body">
+                                    Warning
+                                    <div class="text-white-50 small">#f6c23e</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-danger text-white shadow">
+                                <div class="card-body">
+                                    Danger
+                                    <div class="text-white-50 small">#e74a3b</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-secondary text-white shadow">
+                                <div class="card-body">
+                                    Secondary
+                                    <div class="text-white-50 small">#858796</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-light text-black shadow">
+                                <div class="card-body">
+                                    Light
+                                    <div class="text-black-50 small">#f8f9fc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-dark text-white shadow">
+                                <div class="card-body">
+                                    Dark
+                                    <div class="text-white-50 small">#5a5c69</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="col-lg-6 mb-4">
@@ -478,7 +541,11 @@
         <!-- /.container-fluid -->
     </div>
 
+    <div id="footer" class="footer">
+        <br>
+        <p>Copyright &copy; 2023 Ana Muslim Sdn Bhd. All rightsreserved.</p>
 
+    </div>
 
     <script>
         /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
