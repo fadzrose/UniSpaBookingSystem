@@ -69,6 +69,24 @@
             text-align: center;
         }
 
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+        }
+
+        /* When screen is small, switch to 1 column */
+        @media (max-width: 700px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 90%;
+                margin: 40px auto;
+            }
+        }
+
 
     </style>
 </head>
@@ -77,27 +95,26 @@
     <div class="container">
         <h2>Create Account</h2>
         <form>
-            <table>
-                <td>
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <input type="text" placeholder="Reference code" required>
-                </td>
-                <td>
-                    <input type="text" placeholder="Student ID" required>
-                    <input type="text" placeholder="Contact number" required>
-                    <select required>
-                        <option value="" disabled selected>Select Spa Course</option>
-                        <option value="massage">Massage Course</option>
-                        <option value="aromatherapy">Aromatherapy Course</option>
-                        <option value="manicure">Manicure & Pedicure Course</option>
-                        <option value="facial">Facial Treatment Course</option>
-                    </select>
-                    <input type="text" name="batch" value="Batch 4" readonly>
-                </td>
-            </table>
+            <div class="form-grid">
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="Student ID" required>
             
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Contact number" required>
+            
+                <input type="password" placeholder="Password" required>
+                <select required>
+                    <option value="" disabled selected>Select Spa Course</option>
+                    <option value="massage">Massage Course</option>
+                    <option value="aromatherapy">Aromatherapy Course</option>
+                    <option value="manicure">Manicure & Pedicure Course</option>
+                    <option value="facial">Facial Treatment Course</option>
+                </select>
+            
+                <input type="text" placeholder="Reference code" required>
+                <input type="text" name="batch" value="Batch 4" readonly>
+            </div>
+
             <button type="submit">Sign Up</button>
         </form>
         
