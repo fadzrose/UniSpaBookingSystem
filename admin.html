@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>CEO page</title>
+    <style>
+        .password-container {
+            position: relative;
+        }
+
+        .password-input {
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .button {
+
+            border: 2px solid #E2852E;
+
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: #ABE0F0;
+
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* centers title */
+            position: relative;
+            padding: 10px;
+            background: #E2852E;
+            color: black;
+            font-size: 30px;
+        }
+
+        /* Position the button to the left */
+        .header .openbtn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        
+
+        .card {
+
+            max-width: 90%;
+            margin: auto;
+            text-align: left;
+            font-family: arial;
+            padding: 10px;
+            box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+            background: #ffe5ec
+        }
+
+        input[type=email] {
+            width: 100%;
+            padding: 10px 20px;
+            margin: 1px 0;
+            display: inline-block;
+            border: 1px solid #F5C857;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password],
+        select {
+            width: 100%;
+            padding: 10px 20px;
+            margin: 1px 0;
+            display: inline-block;
+            border: 1px solid #F5C857
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 10px 20px;
+            margin: 1px 0;
+            display: inline-block;
+            border: 1px solid #F5C857
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse; /* combine borders nicely */
+            width: 100%;
+            border: 2px solid #F5C857/*er border */
+            border-radius: 10px;       /* rounded corners */
+            overflow: hidden;          /* ensures corners are rounded */
+        }
+
+        th, td {
+            border: 1px solid #F5C857;/*nes between cells */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FFEE91;/*ional header color */
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #ABE0F0;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .buttons a:hover {
+            background-color: #ABE0F0;
+        }
+
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #F5C857;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 50px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+        /* The sidebar links */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+            color: #FFEE91;
+
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color:#E2852E;
+            color: whitesmoke;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .openbtn:hover {
+            background-color:#E2852E;
+            box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation*/
+
+        main {
+            transition: margin-left 0.5s;
+            /* If you want a transition effect */
+            padding: 200px;
+        }
+
+        #main {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            margin: 20px 0;
+            box-sizing: border-box;
+            width: 100%;       /* full width of parent */
+            max-width: 1200px;
+        }
+
+    </style>
+</head>
+
+<body style="background: #FFEE91;">
+    <div class="header" id="header">
+        <div>
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <h2>MASMED Beauty Prenuer</h2>
+        </div>
+
+    </div>
+
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <br>
+        <br>
+        <br>
+        <!-- Divider -->
+        <hr class="hr hr-blurry" />
+        <a href="manager_page.php">Classes</a>
+        
+        <!-- Divider -->
+        <hr class="hr hr-blurry" />
+        <a href="allprojectlist.php">Booking</a>
+        <a href="allprojectlist.php">Event</a>
+        <a href="reportbyCategory.php">Commission</a>
+
+        <!-- Divider -->
+        <hr class="hr hr-blurry" />
+        <a href="?logout=true">Log out</a> <!-- Add logout parameter -->
+    </div>
+
+    <br>
+    <div id="main">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Classes</h1>
+                <div class="buttons">
+                    <a href="#">Add Class</a>
+                </div>
+            </div>
+
+            <!-- Content Row -->
+            
+                <div class="card">
+                    
+                                    <table>
+                                        <tr>
+                                            <th>Class</th><th>Date</th><th>Time</th><th>Action</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Back Massage Class</td><td>DD/MM/YYYY</td><td>HH:MM</td>
+                                            <td><div class="buttons">
+                                                <a href="#">Edit</a>    
+                                            </div></td>
+                                        </tr>
+                                    </table>
+                                
+                </div>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Upcoming Seminar</h1>
+                <div class="buttons">
+                    <a href="#">Add Seminar</a>
+                </div>
+            </div>
+            
+            <!-- Content Row -->
+            
+            <div class="card">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Seminar Marketing</h1>
+                </div>
+                <div class="buttons">
+                    <a href="#">Total participant: 13/15</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Seminar Accounting</h1>
+                </div>
+                <div class="buttons">
+                    <a href="#">Total participant: 10/15</a>
+                </div>
+            </div>
+        
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">MASMED Beuaty Prenuer Starter Kit</h1>
+            </div>
+            
+            <!-- Content Row -->
+            
+            <div class="card">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Apply Tabung Keusahawanan Siswa</h1>
+                </div>
+                <table>
+                    <tr>
+                        <th>Name</th><th>Course</th><th>Batch</th><th>Status</th><th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Siti</td><td>Hairstyle</td><td>Batch 3</td><td>Received</td>
+                        <td><div class="buttons">
+                            <a href="#">View Detail</a>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td>Siti</td>
+                        <td>Hairstyle</td>
+                        <td>Batch 3</td>
+                        <td>Applied</td>
+                        <td>
+                            <div class="buttons">
+                                <a href="#">View Detail</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Siti</td>
+                        <td>Hairstyle</td>
+                        <td>Batch 3</td>
+                        <td>Pending</td>
+                        <td>
+                            <div class="buttons">
+                                <a href="#">View Detail</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            
+    </div>
+
+
+
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "240px";
+            document.getElementById("main").style.marginRight = "40px";
+            document.getElementById("footer").style.marginLeft = "200px";
+            document.getElementById("header").style.marginLeft = "200px";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "5%";
+            document.getElementById("footer").style.marginLeft = "0";
+            document.getElementById("header").style.marginLeft = "0";
+        }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</body>
+
+</html>
